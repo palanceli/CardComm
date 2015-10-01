@@ -1,0 +1,10 @@
+1、为什么在IB中加入一个TableView的时候,会出现下面这样的警告:
+Main.storyboard: Prototype table cells must have reuse identifiers
+
+在IB中选中单元格，在Attribute Inspector中将Accessory设置为Disclosure Indicator；
+给Identifier随便起一个名字，警告就解除了。因为在编程方式添加Cell时，必须调用
+tableView registerClass: forCellReuseIdentifier:
+才能让Cell可复用，在IB中，则是需要做以上两个设置
+
+2、怎么拿到安装目录，怎么遍历？
+

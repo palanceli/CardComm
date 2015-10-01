@@ -5,6 +5,8 @@ import wx
 import wx.grid
 import json
 import os
+import uuid
+import datetime
 
 class MainGridTable(wx.grid.PyGridTableBase):
     def __init__(self):
@@ -12,7 +14,7 @@ class MainGridTable(wx.grid.PyGridTableBase):
         self.data = {}
 
     def GetNumberRows(self):
-        return 13
+        return 18
 
     def GetNumberCols(self):
         return 4
@@ -36,7 +38,7 @@ class MainGridTable(wx.grid.PyGridTableBase):
 
 class MainFrame(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, -1, 'jsonmaker', size = (600, 400))
+        wx.Frame.__init__(self, None, -1, 'jsonmaker', size = (600, 450))
         panel = wx.Panel(self, -1)
 
         # 创建菜单及快捷键
@@ -85,6 +87,7 @@ class MainFrame(wx.Frame):
         self.id = None
         self.createTime = None
         self.data = None
+        self.filename = ''
         self.conf = {}
         if os.path.exists('config.conf'):
             with open('config.conf', 'rb') as f:
@@ -92,20 +95,26 @@ class MainFrame(wx.Frame):
 
     def OnOpen(self, event):
         file_wildcard = 'json file(*.json) | *.json'
-        dlg = wx.FileDialog(self, '打开json文件', os.getcwd(), style = wx.OPEN)
+        filedir = os.getcwd()
+        if self.conf.has_key('filedir') and os.path.exists(self.conf['filedir']):
+            filedir = self.conf['filedir']
+        dlg = wx.FileDialog(self, '打开json文件', filedir, style = wx.OPEN)
         if dlg.ShowModal() != wx.ID_OK:
             return
 
-        self.conf['filename'] = dlg.GetPath()
-        self.SetTitle(self.conf['filename'])
-        with open(self.conf['filename'], 'rb') as f:
+        self.filename = dlg.GetPath()
+        self.conf['filedir'] = os.path.dirname(self.filename)
+        self.SetTitle(self.filename)
+        with open(self.filename, 'rb') as f:
             self.data = json.JSONDecoder().decode(f.read().decode('utf8'))
         self.nameTextCtrl.SetValue(self.data['title'])
         wordKeys = ('verbs', 'terms', 'commendatories', 'derogratories')
         for col in range(4):
-            for row in range(13):
-                words = self.data[wordKeys[col]]
-                self.gridTable.SetValue(row, col, words[row])
+            words = self.data[wordKeys[col]]
+            row = 0
+            for word in words:
+                self.gridTable.SetValue(row, col, word)
+                row += 1
         self.grid.ForceRefresh()
 
     def OnNew(self, event):
@@ -113,29 +122,33 @@ class MainFrame(wx.Frame):
 
     def OnSave(self, event):
         file_wildcard = 'json files(*.json) | *.json'
-        dlg = wx.FileDialog(self, '保存json文件', os.getcwd(), style = wx.SAVE)
-        if dlg.ShowModal() != wx.ID_OK:
-            return
-        
-        self.conf['filename'] = dlg.GetPath()
-        self.SetTitle(self.conf['filename'])
+        if self.filename == None or len(self.filename) == 0:
+            dlg = wx.FileDialog(self, '保存json文件', os.getcwd(), style = wx.SAVE)
+            if dlg.ShowModal() != wx.ID_OK:
+                return
+            self.filename = dlg.GetPath()
+            self.SetTitle(self.filename)
+            self.conf['filedir'] = os.path.dirname(self.filename)
             
         if self.data == None:
             self.data = {}
-        if not self.data.has_key('id'):
-            self.data['id'] = ''
+        
+        if len(self.data['id']) == 0:
+            self.data['id'] = unicode(uuid.uuid1())
         self.data['title'] = self.nameTextCtrl.GetValue()
-        self.data['createTime'] = ''
+        self.data['createTime'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         wordKeys = ('verbs', 'terms', 'commendatories', 'derogratories')
         for col in range(4):
             words = []
-            for row in range(13):
+            rows = self.grid.GetNumberRows()
+            for row in range(rows):
                 words.append(self.gridTable.GetValue(row, col))
             wordKey = wordKeys[col]
             self.data[wordKey] = words
 
-        with open(self.conf['filename'], 'wb') as f:
+        with open(self.filename, 'wb') as f:
             f.write(json.JSONEncoder().encode(self.data).encode('utf8'))
+        logging.debug('保存成功！')
 
     def OnQuit(self, event):
         with open('config.conf', 'wb') as f:
