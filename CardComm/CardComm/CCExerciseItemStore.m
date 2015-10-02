@@ -39,12 +39,12 @@
 {
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *jsonPath = [[bundle bundlePath]stringByAppendingPathComponent:@"defaultJSons"];
-    NSLog(@"%@:%d %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, jsonPath);
+    NSLog(@"%@",  jsonPath);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
     NSArray *fileList = [fileManager contentsOfDirectoryAtPath:jsonPath error:&error];
     for (NSString *f in fileList) {
-        NSLog(@"%@:%d %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, f);
+        NSLog(@"%@", f);
     }
 }
 @end

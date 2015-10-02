@@ -61,6 +61,7 @@
 		F61417BC1BBD856900A3E0F0 /* CCExerciseItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseItemStore.h; sourceTree = "<group>"; };
 		F61417BD1BBD856900A3E0F0 /* CCExerciseItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseItemStore.m; sourceTree = "<group>"; };
 		F61417BF1BBD88BB00A3E0F0 /* QA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QA.txt; sourceTree = "<group>"; };
+		F66045161BBEE8A3002DEF85 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +127,7 @@
 				F61417BC1BBD856900A3E0F0 /* CCExerciseItemStore.h */,
 				F61417BD1BBD856900A3E0F0 /* CCExerciseItemStore.m */,
 				F61417BF1BBD88BB00A3E0F0 /* QA.txt */,
+				F66045161BBEE8A3002DEF85 /* PrefixHeader.pch */,
 			);
 			path = CardComm;
 			sourceTree = "<group>";
@@ -373,6 +375,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CardComm/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -414,6 +418,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CardComm/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -431,6 +437,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CardComm/PrefixHeader.pch";
 				INFOPLIST_FILE = CardComm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = binglen.CardComm;
@@ -442,6 +450,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CardComm/PrefixHeader.pch";
 				INFOPLIST_FILE = CardComm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = binglen.CardComm;
@@ -516,6 +526,7 @@
 				F61417AA1BBD6EA100A3E0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F61417AB1BBD6EA100A3E0F0 /* Build configuration list for PBXNativeTarget "CardCommTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +535,7 @@
 				F61417AD1BBD6EA100A3E0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F61417AE1BBD6EA100A3E0F0 /* Build configuration list for PBXNativeTarget "CardCommUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +544,7 @@
 				F61417B01BBD6EA100A3E0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
