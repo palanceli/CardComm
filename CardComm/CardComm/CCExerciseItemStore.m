@@ -7,6 +7,10 @@
 //
 
 #import "CCExerciseItemStore.h"
+#import "CCExerciseItem.h"
+@interface CCExerciseItemStore()
+@property (nonatomic, strong) NSMutableArray *items;
+@end
 
 @implementation CCExerciseItemStore
 #pragma mark - 单体
@@ -24,7 +28,7 @@
 {
     self = [super init];
     if (self) {
-        ;
+        _items = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -38,13 +42,20 @@
 -(void)loadExercises
 {
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *jsonPath = [[bundle bundlePath]stringByAppendingPathComponent:@"defaultJSons"];
-    NSLog(@"%@",  jsonPath);
+    // 拼接json目录
+    NSString *jsonDir = [[bundle bundlePath]stringByAppendingPathComponent:@"defaultJSons"];
+    NSLog(@"defaultJSon目录：%@",  jsonDir);
+    // 遍历json目录
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error = nil;
-    NSArray *fileList = [fileManager contentsOfDirectoryAtPath:jsonPath error:&error];
+    NSArray *fileList = [fileManager contentsOfDirectoryAtPath:jsonDir error:&error];
+    NSLog(@"遍历json文件：");
     for (NSString *f in fileList) {
         NSLog(@"%@", f);
+        NSString *jsonFilePath = [jsonDir stringByAppendingPathComponent:f];
+        CCExerciseItem *item = [[CCExerciseItem alloc]initWithJSONFilePath:jsonFilePath];
+        [self.items addObject:item];
+        [item Log];
     }
 }
 @end
