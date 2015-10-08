@@ -4,22 +4,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--扑克练习沟通-->
         <scene sceneID="HlG-rv-GCN">
             <objects>
-                <tableViewController id="6m3-em-Qpy" sceneMemberID="viewController">
+                <tableViewController id="6m3-em-Qpy" customClass="CCExerItemsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fhE-gc-Hrd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="exerciseCell" id="tAS-QB-OEf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CCExerciseItemCell" id="tAS-QB-OEf">
                                 <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tAS-QB-OEf" id="QTK-Sp-nMV">
                                     <rect key="frame" x="0.0" y="0.0" width="381" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="YSw-vu-fdM" kind="show" id="8IG-Mv-KWc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -27,12 +30,35 @@
                             <outlet property="delegate" destination="6m3-em-Qpy" id="EhL-ZU-fuq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6a0-nh-fPS"/>
+                    <navigationItem key="navigationItem" title="扑克练习沟通" id="6a0-nh-fPS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ww-2e-5xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-5" y="93"/>
+        </scene>
+        <!--Exercise Content View Controller-->
+        <scene sceneID="waH-w6-alL">
+            <objects>
+                <viewController id="YSw-vu-fdM" customClass="CCExerciseContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DR4-6x-XVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="cNC-YM-BqN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LXQ-q3-fn1" customClass="CCExerciseContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hse-JY-pdI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="scrollView" destination="LXQ-q3-fn1" id="LjN-Yo-vwB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzN-WC-Zs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447" y="93"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="QFB-6O-Swa">

@@ -39,6 +39,8 @@
     return nil;
 }
 
+#pragma mark -
+
 -(void)loadExercises
 {
     NSBundle *bundle = [NSBundle mainBundle];
@@ -57,5 +59,10 @@
         [self.items addObject:item];
         [item Log];
     }
+}
+
+-(NSArray*)allExercises
+{
+    return self.items;
 }
 @end

@@ -12,4 +12,5 @@
 +(instancetype)sharedStore;
 
 -(void)loadExercises;
+-(NSArray*)allExercises;
 @end

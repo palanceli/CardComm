@@ -19,6 +19,9 @@
 		F61417BB1BBD854F00A3E0F0 /* CCExerciseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F61417BA1BBD854F00A3E0F0 /* CCExerciseItem.m */; settings = {ASSET_TAGS = (); }; };
 		F61417BE1BBD856900A3E0F0 /* CCExerciseItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F61417BD1BBD856900A3E0F0 /* CCExerciseItemStore.m */; settings = {ASSET_TAGS = (); }; };
 		F61417C01BBD88BB00A3E0F0 /* QA.txt in Resources */ = {isa = PBXBuildFile; fileRef = F61417BF1BBD88BB00A3E0F0 /* QA.txt */; settings = {ASSET_TAGS = (); }; };
+		F61693DA1BC0C50A00F5A2EF /* CCExerItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F61693DD1BC207D300F5A2EF /* CCExerciseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F61693E01BC208E600F5A2EF /* CCExerciseContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,12 @@
 		F61417BC1BBD856900A3E0F0 /* CCExerciseItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseItemStore.h; sourceTree = "<group>"; };
 		F61417BD1BBD856900A3E0F0 /* CCExerciseItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseItemStore.m; sourceTree = "<group>"; };
 		F61417BF1BBD88BB00A3E0F0 /* QA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QA.txt; sourceTree = "<group>"; };
+		F61693D81BC0C50A00F5A2EF /* CCExerItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerItemsViewController.h; sourceTree = "<group>"; };
+		F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerItemsViewController.m; sourceTree = "<group>"; };
+		F61693DB1BC207D300F5A2EF /* CCExerciseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseContentViewController.h; sourceTree = "<group>"; };
+		F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseContentViewController.m; sourceTree = "<group>"; };
+		F61693DE1BC208E600F5A2EF /* CCExerciseContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseContentView.h; sourceTree = "<group>"; };
+		F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseContentView.m; sourceTree = "<group>"; };
 		F66045161BBEE8A3002DEF85 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +137,12 @@
 				F61417BD1BBD856900A3E0F0 /* CCExerciseItemStore.m */,
 				F61417BF1BBD88BB00A3E0F0 /* QA.txt */,
 				F66045161BBEE8A3002DEF85 /* PrefixHeader.pch */,
+				F61693D81BC0C50A00F5A2EF /* CCExerItemsViewController.h */,
+				F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */,
+				F61693DB1BC207D300F5A2EF /* CCExerciseContentViewController.h */,
+				F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */,
+				F61693DE1BC208E600F5A2EF /* CCExerciseContentView.h */,
+				F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */,
 			);
 			path = CardComm;
 			sourceTree = "<group>";
@@ -292,9 +307,12 @@
 			files = (
 				F61417BB1BBD854F00A3E0F0 /* CCExerciseItem.m in Sources */,
 				F61417831BBD6EA000A3E0F0 /* AppDelegate.m in Sources */,
+				F61693DD1BC207D300F5A2EF /* CCExerciseContentViewController.m in Sources */,
 				F61417BE1BBD856900A3E0F0 /* CCExerciseItemStore.m in Sources */,
 				F61417B31BBD797800A3E0F0 /* CCRootViewController.m in Sources */,
 				F61417801BBD6EA000A3E0F0 /* main.m in Sources */,
+				F61693E01BC208E600F5A2EF /* CCExerciseContentView.m in Sources */,
+				F61693DA1BC0C50A00F5A2EF /* CCExerItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

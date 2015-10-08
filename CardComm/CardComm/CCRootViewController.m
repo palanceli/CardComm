@@ -12,7 +12,6 @@
 @implementation CCRootViewController
 -(void)viewDidLoad
 {
-    CCExerciseItemStore *sharedStore = [CCExerciseItemStore sharedStore];
-    [sharedStore loadExercises];
+    
 }
 @end
