@@ -21,7 +21,8 @@
 		F61417C01BBD88BB00A3E0F0 /* QA.txt in Resources */ = {isa = PBXBuildFile; fileRef = F61417BF1BBD88BB00A3E0F0 /* QA.txt */; settings = {ASSET_TAGS = (); }; };
 		F61693DA1BC0C50A00F5A2EF /* CCExerItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F61693DD1BC207D300F5A2EF /* CCExerciseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F61693E01BC208E600F5A2EF /* CCExerciseContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */; settings = {ASSET_TAGS = (); }; };
+		F6CB07E71BC8093D00284841 /* ReusableScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB07E61BC8093D00284841 /* ReusableScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		F6CB07EA1BC80CA700284841 /* CCExerciseContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CB07E91BC80CA700284841 /* CCExerciseContentView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,9 +69,11 @@
 		F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerItemsViewController.m; sourceTree = "<group>"; };
 		F61693DB1BC207D300F5A2EF /* CCExerciseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseContentViewController.h; sourceTree = "<group>"; };
 		F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseContentViewController.m; sourceTree = "<group>"; };
-		F61693DE1BC208E600F5A2EF /* CCExerciseContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseContentView.h; sourceTree = "<group>"; };
-		F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseContentView.m; sourceTree = "<group>"; };
 		F66045161BBEE8A3002DEF85 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F6CB07E51BC8093D00284841 /* ReusableScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReusableScrollView.h; sourceTree = "<group>"; };
+		F6CB07E61BC8093D00284841 /* ReusableScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReusableScrollView.m; sourceTree = "<group>"; };
+		F6CB07E81BC80CA700284841 /* CCExerciseContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCExerciseContentView.h; sourceTree = "<group>"; };
+		F6CB07E91BC80CA700284841 /* CCExerciseContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCExerciseContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 		F614177D1BBD6EA000A3E0F0 /* CardComm */ = {
 			isa = PBXGroup;
 			children = (
+				F6CB07E51BC8093D00284841 /* ReusableScrollView.h */,
+				F6CB07E61BC8093D00284841 /* ReusableScrollView.m */,
 				F61417B71BBD84AA00A3E0F0 /* defaultJSons */,
 				F61417811BBD6EA000A3E0F0 /* AppDelegate.h */,
 				F61417821BBD6EA000A3E0F0 /* AppDelegate.m */,
@@ -141,8 +146,8 @@
 				F61693D91BC0C50A00F5A2EF /* CCExerItemsViewController.m */,
 				F61693DB1BC207D300F5A2EF /* CCExerciseContentViewController.h */,
 				F61693DC1BC207D300F5A2EF /* CCExerciseContentViewController.m */,
-				F61693DE1BC208E600F5A2EF /* CCExerciseContentView.h */,
-				F61693DF1BC208E600F5A2EF /* CCExerciseContentView.m */,
+				F6CB07E81BC80CA700284841 /* CCExerciseContentView.h */,
+				F6CB07E91BC80CA700284841 /* CCExerciseContentView.m */,
 			);
 			path = CardComm;
 			sourceTree = "<group>";
@@ -306,12 +311,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F61417BB1BBD854F00A3E0F0 /* CCExerciseItem.m in Sources */,
+				F6CB07E71BC8093D00284841 /* ReusableScrollView.m in Sources */,
+				F6CB07EA1BC80CA700284841 /* CCExerciseContentView.m in Sources */,
 				F61417831BBD6EA000A3E0F0 /* AppDelegate.m in Sources */,
 				F61693DD1BC207D300F5A2EF /* CCExerciseContentViewController.m in Sources */,
 				F61417BE1BBD856900A3E0F0 /* CCExerciseItemStore.m in Sources */,
 				F61417B31BBD797800A3E0F0 /* CCRootViewController.m in Sources */,
 				F61417801BBD6EA000A3E0F0 /* main.m in Sources */,
-				F61693E01BC208E600F5A2EF /* CCExerciseContentView.m in Sources */,
 				F61693DA1BC0C50A00F5A2EF /* CCExerItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="YSw-vu-fdM" kind="show" id="8IG-Mv-KWc"/>
+                                    <segue destination="YSw-vu-fdM" kind="show" identifier="SelectExercise" id="8IG-Mv-KWc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -45,7 +45,7 @@
                         <viewControllerLayoutGuide type="top" id="DR4-6x-XVR"/>
                         <viewControllerLayoutGuide type="bottom" id="cNC-YM-BqN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LXQ-q3-fn1" customClass="CCExerciseContentView">
+                    <view key="view" contentMode="scaleToFill" id="LXQ-q3-fn1" customClass="ReusableScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,12 +53,46 @@
                     <navigationItem key="navigationItem" id="hse-JY-pdI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="scrollView" destination="LXQ-q3-fn1" id="LjN-Yo-vwB"/>
+                        <outlet property="scrollView" destination="LXQ-q3-fn1" id="Cfh-YP-B31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzN-WC-Zs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="93"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vug-NG-yYa">
+            <objects>
+                <viewController storyboardIdentifier="CCExerciseContentViewController" id="WbX-C1-P95" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6VF-64-fWO"/>
+                        <viewControllerLayoutGuide type="bottom" id="EgH-SS-Eae"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GcG-7T-7GV" customClass="CCExerciseContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikR-CW-0rg">
+                                <rect key="frame" x="186" y="220" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ikR-CW-0rg" firstAttribute="centerX" secondItem="GcG-7T-7GV" secondAttribute="centerX" id="5Na-9x-aUf"/>
+                            <constraint firstItem="ikR-CW-0rg" firstAttribute="top" secondItem="6VF-64-fWO" secondAttribute="bottom" constant="200" id="KvO-xO-mB0"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="keyWordLabel" destination="ikR-CW-0rg" id="QQK-DV-cCW"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCa-1f-yVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="93"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="QFB-6O-Swa">

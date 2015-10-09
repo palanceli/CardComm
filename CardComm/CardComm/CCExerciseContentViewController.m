@@ -7,14 +7,37 @@
 //
 
 #import "CCExerciseContentViewController.h"
-@interface CCExerciseContentViewController()
-@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+#import "ReusableScrollView.h"
+#import "CCExerciseContentView.h"
 
+@interface CCExerciseContentViewController()<ReusableScrollViewDelegate>
+
+@property (strong, nonatomic) IBOutlet ReusableScrollView *scrollView;
+@property (strong, nonatomic) NSArray *words;
 @end
 
 @implementation CCExerciseContentViewController
 -(void)viewDidLoad
 {
-    
+    self.words = [self.item randomWords];
+    self.scrollView.delegateForReuseableScrollView = self;
+    [self.scrollView setupViews];
+}
+
+-(NSUInteger)numOfPages
+{
+    return [self.words count];
+}
+
+-(UIView*)setupView:(UIView *)view toPage:(NSUInteger)toPage
+{
+    if (view == nil) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = (UIViewController*)[storyboard instantiateViewControllerWithIdentifier:@"CCExerciseContentViewController"];
+        view = vc.view;
+    }
+    CCExerciseContentView *exerciseContentView = (CCExerciseContentView*)view;
+    exerciseContentView.keyWordLabel.text = self.words[toPage];
+    return view;
 }
 @end

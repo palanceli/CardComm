@@ -28,6 +28,38 @@
     return self;
 }
 
+-(NSArray *)randomWords
+{
+    NSMutableArray *array = [[NSMutableArray alloc]init];
+    for (NSString *i in self.commendatories) {
+        if ([i length] > 0) {
+            [array addObject:i];
+        }
+    }
+    for (NSString *i in self.derogratories) {
+        if ([i length] > 0) {
+            [array addObject:i];
+        }
+    }
+    for (NSString *i in self.terms) {
+        if ([i length] > 0) {
+            [array addObject:i];
+        }
+    }
+    for (NSString *i in self.verbs) {
+        if ([i length] > 0) {
+            [array addObject:i];
+        }
+    }
+    for (int i=0; i<[array count]; i++) {
+        int j = arc4random() % [array count];
+        NSString *tmp = array[j];
+        array[j] = array[i];
+        array[i] = tmp;
+    }
+    return array;
+}
+
 -(void)Log
 {
     NSLog(@"id:%@\t title:%@\t createTime:%@", self.fileid, self.fileid, self.createTime);

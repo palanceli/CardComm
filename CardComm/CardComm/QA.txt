@@ -8,3 +8,5 @@ tableView registerClass: forCellReuseIdentifier:
 
 2、怎么拿到安装目录，怎么遍历？
 
+3、从UITableView点击某一个数据项之后，通过代码实现和通过Storyboard实现分别怎么做？
+

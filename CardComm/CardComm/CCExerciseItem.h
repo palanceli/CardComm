@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSArray *derogratories;
 
 -(instancetype)initWithJSONFilePath:(NSString*)jsonFilePath;
+-(NSArray *)randomWords;
 -(void)Log;
 @end
