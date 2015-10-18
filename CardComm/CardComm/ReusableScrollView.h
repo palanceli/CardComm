@@ -17,4 +17,5 @@
 @property (nonatomic,assign, nonnull) id<ReusableScrollViewDelegate> delegateForReuseableScrollView;
 // 完成bufferViews的初始化，并放入containerView，再把containerView放入scrollView
 -(void)setupViews;
+-(void)adjustSize;
 @end

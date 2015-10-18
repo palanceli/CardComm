@@ -51,6 +51,22 @@ static const int nBufferViews = 3;
     }
 }
 
+-(void)adjustSize
+{
+    CGRect rect = self.frame;
+    rect.size.width *= 3;
+    self.contentSize = rect.size;
+    
+    for (int i=0; i<nBufferViews; i++) {
+        UIView *view = [self.bufferViews objectAtIndex:i];
+        CGRect rect = self.frame;
+        rect.origin.x = rect.size.width * i;
+        rect.origin.y = 0;
+        view.frame = rect;
+    }
+}
+
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];

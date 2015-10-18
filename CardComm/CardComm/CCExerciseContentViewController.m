@@ -22,6 +22,13 @@
     self.words = [self.item randomWords];
     self.scrollView.delegateForReuseableScrollView = self;
     [self.scrollView setupViews];
+    self.navigationController.navigationBar.translucent = NO;
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.scrollView adjustSize];
 }
 
 -(NSUInteger)numOfPages
